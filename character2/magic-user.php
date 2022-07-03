@@ -24,7 +24,6 @@
     <!--PHP-->
     <?php
     
-    //include 'php/armour.php';
     include 'php/checks.php';
     include 'php/weapons.php';
     include 'php/gear.php';
@@ -245,49 +244,17 @@
         $wisdomMod = getAbilityModifier($wisdom);
         $charismaMod = getAbilityModifier($charisma);
 
-/*
-        if(isset($_POST["theArmour"]))
-        {
-            $armour = $_POST["theArmour"];
-        }
-    
-        $armourName = getArmour($armour)[0];
-        
-        $armourACBonus = getArmour($armour)[1];
-        $armourWeight = getArmour($armour)[2];
-
-        if(isset($_POST['theCheckBoxShield']) && $_POST['theCheckBoxShield'] == 1) 
-        {
-            $shield = 1;
-        }
-        else
-        {
-            $shield = 0;
-        }
-        
-    
-        $shieldName = getShield($shield)[0];
-        
-        $shieldACBonus = getShield($shield)[1];
-        $shieldWeight = getShield($shield)[2];
-
-       $totalAcDefense = $armourACBonus + $shieldACBonus;*/
-
        $baseArmourClass = 9 - $dexterityMod;
 
        $armourClass = $baseArmourClass;
 
-
        //Hit Points
        $hitPoints = getHitPoints($level, $constitutionMod);
-
-
 
         $weaponArray = array();
         $weaponNames = array();
         $weaponDamage = array();
         $weaponWeight = array();
-    
     
     //For Random Select weapon
     if(isset($_POST['thecheckBoxRandomWeaponsV3']) && $_POST['thecheckBoxRandomWeaponsV3'] == 1) 
@@ -386,8 +353,8 @@
         $saveSpells = saveSpells($level);
         $saveSpells -= $wisdomMod;
 
-        $primeReq = primeReq($wisdom);
-        //$secondAttack = secondAttack($level);
+        $primeReq = primeReq($intelligence);
+        $mageAbilities =  mageAbilities($level);
 
         $strengthDescription = strengthModifierDescription($strength);
         $dexterityDescription = dexterityModifierDescription($dexterity);
@@ -443,6 +410,8 @@
         $level5Spells = spellsLevel5($level);
         $level6Spells = spellsLevel6($level);
         $level7Spells = spellsLevel7($level);
+        $level8Spells = spellsLevel8($level);
+        $level9Spells = spellsLevel9($level);
 
     ?>
 
@@ -918,6 +887,7 @@
         <span id="classAbilities">
             <?php
                 echo $primeReq;
+                echo $mageAbilities;
             ?>
         </span>
 
@@ -961,6 +931,18 @@
         <span id="level7Spells">
             <?php
                 echo $level7Spells;
+            ?>
+        </span>
+        
+        <span id="level8Spells">
+            <?php
+                echo $level8Spells;
+            ?>
+        </span>
+        
+        <span id="level9Spells">
+            <?php
+                echo $level9Spells;
             ?>
         </span>
         
