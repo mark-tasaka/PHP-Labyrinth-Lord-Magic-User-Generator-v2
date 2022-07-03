@@ -3,6 +3,17 @@ The Labyrinth Lord Magic-User Character Generator Version 2 is the second iterat
 
 ------------
 
+A live version of the Labyrinth Lord Magic-User Character Generator Version 2 is available at:
+
+https://www.oldschooladventures.org/ll/classes/magic_user/
+
+----------
+
+
+Update 1.01: 2022-07-03
+
+Updates to magic-user.php, magic-user.css, magic-user.png, classDetails.php, gear.php, spells.php, weapons,php, and xp.php.  A link to the live version of the Labyrinth Lord Magic-User Character Generator Version 2 has been added.
+
 
 Initial commit: 2022-07-01
 
